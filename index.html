@@ -144,7 +144,7 @@
           <div>
             <img src="images/stoppage.png" alt="" />
           </div>
-          <div class="ml-3">
+      <div class="ml-3">
             <h2 class="font-Inter font-bold text-4xl">80k+</h2>
             <p class="font-inter text-xl">Rental Partners</p>
           </div>
@@ -170,7 +170,7 @@
               alt=""
             />
             <div class="mr-9 my-auto">
-              <h2 class="text-4xl font-bold font-raleway">New15</h2>
+              <h2 class="text-4xl font-bold font-raleway">NEW15</h2>
               <p class="text-xl">coupon code</p>
             </div>
           </div>
@@ -220,7 +220,7 @@
                 </div>
                 <button class="ml-[330px] btn btn-outline btn- btn-success">
                   <img src="images/seat-green.png" alt="" />
-                  <span>8</span> Seats left
+                  <span id="available-seat">8</span> Seats left
                 </button>
               </div>
               <div class="rounded-2xl my-6 bg-[#F7F8F8] px-3">
@@ -259,10 +259,10 @@
               </div>
             </div>
             <img src="images/info-devider.png" alt="" />
-            <div class="my-auto mr-16 text-center">
+            <div class="seat-fare my-auto mr-16 text-center">
               <!-- left -->
               <img class="mx-auto" src="images/fare.png" alt="" />
-              <h2 class="text-3xl font-raleway my-5 font-bold">550 Taka</h2>
+              <h2 class="text-3xl font-raleway my-5 font-bold"><span class="seat-btn">550</span>Taka</h2>
               <p>Per Seat</p>
             </div>
           </div>
@@ -292,18 +292,18 @@
           </div>
           <!-- seats start -->
           <div class="flex justify-around p-5 gap-3 my-1 w-full">
-            <kbd class="kbd py-3 px-8 mr-20">A</kbd>
-            <kbd class="kbd py-3 px-8">A1</kbd>
-            <kbd class="kbd py-3 px-8">A2</kbd>
-            <kbd class="kbd py-3 px-8">A3</kbd>
-            <kbd class="kbd py-3 px-8">A4</kbd>
+            <kbd class="py-3 px-8 mr-20">A</kbd>
+            <kbd class="seat-btn kbd py-3 px-8">A1</kbd>    
+            <kbd class="seat-btn kbd py-3 px-8">A2</kbd>
+            <kbd class="seat-btn kbd py-3 px-8">A3</kbd>
+            <kbd class="seat-btn kbd py-3 px-8">A4</kbd>
           </div>
           <div class="flex justify-around p-5 gap-3 my-1 w-full">
-            <kbd class="kbd py-3 px-8 mr-20">B</kbd>
-            <kbd class="kbd py-3 px-8">B1</kbd>
-            <kbd class="kbd py-3 px-8">B2</kbd>
-            <kbd class="kbd py-3 px-8">B3</kbd>
-            <kbd class="kbd py-3 px-8">B4</kbd>
+            <kbd class="py-3 px-8 mr-20">B</kbd>
+            <kbd class="seat-btn kbd py-3 px-8">B1</kbd>
+            <kbd class="seat-btn kbd py-3 px-8">B2</kbd>
+            <kbd class="seat-btn kbd py-3 px-8">B3</kbd>
+            <kbd class="seat-btn kbd py-3 px-8">B4</kbd>
           </div>
           <!-- seats end -->
           <!-- select seat end -->
@@ -315,39 +315,20 @@
           >Confirm Your Seat
           </h2>
           <!-- seat overview start-->
-          <div class="overflow-x-auto">
-            <table class="table">
-              <!-- head -->
-              <thead>
-                <tr>
-                  <th>Seat</th>
-                  <th>Class</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- row 1 -->
-                <tr>
-                  <td>A1</td>
-                  <td>Economy</td>
-                  <td>550 </td>
-                </tr>
-                <!-- row 2 -->
-                <tr>
-                  <td>A1</td>
-                  <td>Economy</td>
-                  <td>550 </td>
-              </tbody>
-            </table>
-            <hr> 
+          <div class="selected-seats flex justify-around">
+            <div class="seat">Seat <span id="seat-count" class="bg-[#1DD100] p-1 rounded-full text-white">0</span></div>
+            <div class="class">Class</div>
+            <div class="price">Price</div>
           </div>
+          <div id="selected-seats-container"></div>
+          <hr class="mt-2">
           <!-- seat overview end-->
           <div class="flex justify-between">
             <h2>Total Fare</h2>
             <h2 class="pr-6">BDT 1100</h2>
           </div>
           <div class="gap-2 mt-4">
-            <input type="text" placeholder="Have any coupon?" class="input"/>
+            <input type="text" placeholder="Have any coupon?" class="input w-3/4"/>
             <button class="btn text-white bg-[#1dd100]">APPLY</button>
           </div>
           <div class="flex justify-between mt-4">
@@ -364,7 +345,7 @@
               <div class="label">
                 <span class="label-text">Phone Number*</span>
               </div>
-              <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs mb-4" />
+              <input type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs mb-4" />
             </label>
               <div class="label">
                 <span class="label-text">Email Id*</span>
@@ -415,5 +396,6 @@
         </div>
       </footer>
     </main>
+    <script src="scripts/index.js"></script>
   </body>
 </html>
